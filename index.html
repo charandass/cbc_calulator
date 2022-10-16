@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBC Calculater</title>
+</head>
+<body>
+    <h1>Caclulate CBC</h1>
+    <form action="">
+    <input type="text" placeholder="Enter your HB" id="hb">
+   <br>
+    <button id="enter">Get CBC</button>
+
+    </form>
+    <div id="resultli">
+
+    </div>
+    
+
+    <script>
+        console.log("hello there")
+        let input = document.getElementById("hb")
+        var div = document.querySelector("resultli");
+        var button = document.getElementById("enter");
+
+        function calculatehb(){
+            hb = input.value
+            var rbc = hb/3+0.5
+            var pcv = hb*3+0.5
+            var mcv = pcv/rbc*10
+            var mch = hb/rbc*10
+            var mchc = hb/pcv*100
+            // var li = document.createElement("li");
+            var ul = document.write(`<ul><li>HB is: ${hb}</li><li>Pcv is: ${pcv}</li><li>MCV is:${mcv}</li><li>MCH is: ${mch}</li><li>MCHC is:${mchc}</li><li>RBC is: ${rbc}</li></ul>`)
+
+            div.append(ul);
+            console.log(hb)
+        }
+        
+        button.addEventListener("click", calculatehb);
+    </script>
+</body>
+</html>
